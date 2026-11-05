@@ -1,0 +1,31 @@
+// Esquema de datos de la Biblioteca (Fase 1 · Express + Prisma + SQLite)
+// Relación 1:N -> un Autor tiene muchos Libros.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Autor {
+  id     Int     @id @default(autoincrement())
+  nombre String
+  bio    String?
+  libros Libro[]
+}
+
+model Libro {
+  id              Int     @id @default(autoincrement())
+  titulo          String
+  descripcion     String?
+  anioPublicacion Int?
+  leido           Boolean @default(false)
+  puntuacion      Int?
+  autorId         Int
+  autor           Autor   @relation(fields: [autorId], references: [id], onDelete: Restrict)
+
+  @@index([autorId])
+}
