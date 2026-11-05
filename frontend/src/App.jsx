@@ -280,7 +280,7 @@ export default function App() {
           <strong>Biblioteca</strong> · PAFW Fase 3 · Despliegue en Render
         </p>
         <p>
-          Backend API: <code>{import.meta.env.VITE_API_URL || 'http://localhost:3000/api'}</code> · Versión: <code>v1.0.0-fase3</code>
+          Backend API: <code>{import.meta.env.VITE_API_URL || 'http://localhost:3000/api'}</code> · Versión: <code>v1.0.1-fase3</code>
         </p>
       </footer>
     </div>
