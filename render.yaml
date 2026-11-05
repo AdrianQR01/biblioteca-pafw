@@ -23,7 +23,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: DATABASE_URL
-        value: file:./prisma/dev.db
+        value: file:./dev.db
       - key: API_KEY
         generateValue: true # Genera un token aleatorio seguro en Render
       - key: FRONTEND_URL
