@@ -1,0 +1,283 @@
+/* ===== Reset y base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.55;
+}
+
+/* ===== Layout ===== */
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+header p {
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+/* ===== Tarjetas y secciones ===== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+/* ===== Formularios ===== */
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field input,
+.field select {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  min-width: 180px;
+}
+
+.field input[type="checkbox"] {
+  width: auto;
+  min-width: auto;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.secondary {
+  background: #fff;
+  color: #111827;
+}
+
+button.danger {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Tabla / Lista ===== */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.lista {
+  list-style: none;
+}
+
+.lista-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 8px;
+}
+
+.lista-item .info {
+  display: grid;
+  gap: 2px;
+}
+
+.lista-item .meta {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.empty {
+  color: #4b5563;
+  padding: 12px;
+}
+
+/* ===== Mensajes ===== */
+.mensaje {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.mensaje.error {
+  background: #fee2e2;
+  color: #7f1d1d;
+  border: 1px solid #fecaca;
+}
+
+.mensaje.ok {
+  background: #dcfce7;
+  color: #14532d;
+  border: 1px solid #bbf7d0;
+}
+
+.cargando {
+  color: #4b5563;
+  padding: 12px;
+}
+
+/* ===== Ayudas, formulario y filtros ===== */
+.ayuda {
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.ayuda code {
+  background: #f3f4f6;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 0.85rem;
+}
+
+.error-texto {
+  color: #b91c1c;
+}
+
+.estado-clave {
+  color: #14532d;
+  font-weight: 600;
+}
+
+.crece {
+  flex: 1 1 260px;
+}
+
+.formulario h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.formulario .form-row + .form-row {
+  margin-top: 12px;
+}
+
+.fila-check {
+  align-items: center;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.check input {
+  width: auto;
+  min-width: auto;
+}
+
+.acciones-form {
+  margin-top: 14px;
+}
+
+.separador {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 18px 0;
+}
+
+.filtros {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.filtros .contador {
+  color: #4b5563;
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+.mensaje button {
+  margin-top: 8px;
+}
+
+/* ===== Footer Fase 3 ===== */
+.app-footer {
+  margin-top: 32px;
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.app-footer p {
+  margin-bottom: 4px;
+}
+
+.app-footer code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
