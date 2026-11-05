@@ -1,0 +1,3 @@
+# Regla de reescritura para Single Page Application (SPA) en Render Static Site
+# Cualquier ruta solicitada devuelve index.html con código de estado HTTP 200.
+/*    /index.html   200
