@@ -1,6 +1,6 @@
 # 📚 Proyecto Biblioteca — Sistema de Gestión Bibliográfica
 
-[![CI Status](https://github.com/adrianquenard/biblioteca-pafw/actions/workflows/ci.yml/badge.svg)](https://github.com/adrianquenard/biblioteca-pafw/actions)
+[![CI Status](https://github.com/AdrianQR01/biblioteca-pafw/actions/workflows/ci.yml/badge.svg)](https://github.com/AdrianQR01/biblioteca-pafw/actions)
 [![Node.js](https://img.shields.io/badge/Node.js-20.18.0-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-4.18-000000?logo=express&logoColor=white)](https://expressjs.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-6.19-2D3748?logo=prisma&logoColor=white)](https://www.prisma.io/)
@@ -121,8 +121,8 @@ biblioteca/
 |---|---|---|---|:---:|
 | `PORT` | Puerto de escucha de Express | `3000` | Inyectado por Render (ej. `10000`) | No |
 | `NODE_ENV` | Entorno de ejecución (`development` / `production`) | `development` | `production` | No |
-| `DATABASE_URL` | Cadena de conexión para Prisma SQLite | `file:./dev.db` | `file:./prisma/dev.db` | No |
-| `API_KEY` | Clave para rutas de escritura (`POST`, `PATCH`, `DELETE`) | `clave_desarrollo_2026` | `sec_prod_lib_9f82d1c74a0e` | **SÍ** |
+| `DATABASE_URL` | Cadena de conexión para Prisma SQLite | `file:./dev.db` | `file:./dev.db` | No |
+| `API_KEY` | Clave para rutas de escritura (`POST`, `PATCH`, `DELETE`) | `[definida en backend/.env]` | `[definida en el panel de Render]` | **SÍ** |
 | `FRONTEND_URL` | Origen permitido por la política estricta de CORS | `http://localhost:5173` | `https://biblioteca-frontend-adrian.onrender.com` | No |
 
 > ⚠️ **Regla de oro sobre `FRONTEND_URL`:** No debe incluir barra final (`/`). Si se introduce con barra final, la comparación contra la cabecera `Origin` del navegador fallará y provocará un bloqueo CORS.
@@ -146,7 +146,7 @@ biblioteca/
 
 ### Paso 1: Clonar el repositorio
 ```bash
-git clone https://github.com/adrianquenard/biblioteca-pafw.git
+git clone https://github.com/AdrianQR01/biblioteca-pafw.git
 cd biblioteca-pafw
 ```
 
@@ -173,7 +173,7 @@ npm run test    # Ejecuta los 12 tests unitarios e integrados
 npm run dev     # Arranca el servidor Vite en http://localhost:5173
 ```
 
-Abre tu navegador en `http://localhost:5173`. Para crear, modificar o eliminar libros, introduce la clave configurada en el `.env` del backend (`clave_desarrollo_2026`) en el bloque "Clave de sesión".
+Abre tu navegador en `http://localhost:5173`. Para crear, modificar o eliminar libros, introduce la clave configurada en `backend/.env` en el bloque "Clave de sesión". Su valor no se documenta: solo vive en el entorno local y en el panel de Render.
 
 ---
 
@@ -184,7 +184,7 @@ El despliegue puede realizarse de forma automática mediante el archivo `render.
 ### Opción A: Despliegue mediante Blueprint (`render.yaml`)
 1. Inicia sesión en [Render Dashboard](https://dashboard.render.com/).
 2. Haz clic en **Blueprints** → **New Blueprint Instance**.
-3. Selecciona tu repositorio de GitHub `biblioteca-pafw`.
+3. Selecciona tu repositorio de GitHub `AdrianQR01/biblioteca-pafw`.
 4. Render leerá el archivo `render.yaml`, provisionará automáticamente el Web Service y el Static Site, y vinculará los parámetros requeridos.
 
 ### Opción B: Despliegue manual paso a paso
@@ -201,7 +201,7 @@ El despliegue puede realizarse de forma automática mediante el archivo `render.
 - **Environment Variables:**
   - `NODE_VERSION` = `20.18.0`
   - `NODE_ENV` = `production`
-  - `DATABASE_URL` = `file:./prisma/dev.db`
+  - `DATABASE_URL` = `file:./dev.db`
   - `API_KEY` = `[Generar clave secreta aleatoria]`
   - `FRONTEND_URL` = `https://biblioteca-frontend-adrian.onrender.com`
 
