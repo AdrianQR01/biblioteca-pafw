@@ -1,0 +1,106 @@
+Evidencias de la API — Fase 2 PAFW · Adrián Quenard
+Generado: 2026-10-30 16:22 · Backend: http://localhost:3000/api
+La clave X-Api-Key se lee de .env y no se imprime en este documento.
+
+===== 1. GET /api/libros — datos reales (R12) =====
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:5173
+Vary: Origin
+Content-Type: application/json; charset=utf-8
+Content-Length: 865
+ETag: W/"361-g449xYBhZ/xylWKN0RFHaPCudd8"
+Date: Fri, 30 Oct 2026 15:22:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+libros: 3
+{
+  "id": 1,
+  "titulo": "La casa de los espíritus",
+  "descripcion": "Novela autobiográfica que combina historia y fantasía",
+  "anioPublicacion": 1982,
+  "leido": true,
+  "puntuacion": 9,
+  "autorId": 1,
+  "autor": {
+    "id": 1,
+    "nombre": "Isabel Allende",
+    "bio": "Escritora chilena, galardonada con el Premio Nobel de Literatura"
+  }
+}
+
+===== 2. Preflight OPTIONS /api/libros (R2) =====
+HTTP/1.1 204 No Content
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:5173
+Vary: Origin
+Access-Control-Allow-Methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+Access-Control-Allow-Headers: Content-Type,X-Api-Key,x-api-key
+Access-Control-Max-Age: 86400
+Content-Length: 0
+Date: Fri, 30 Oct 2026 15:22:04 GMT
+
+===== 3. POST sin X-Api-Key (401, R18) =====
+status=401
+{"error":"Falta la cabecera X-Api-Key: operación protegida"}
+
+===== 4. POST con clave incorrecta (401) =====
+status=401
+{"error":"API key incorrecta"}
+
+===== 5. POST con clave correcta (201, R13) =====
+{
+    "id": 4,
+    "titulo": "Prueba de entrega",
+    "descripcion": "Creado desde la API",
+    "anioPublicacion": 2022,
+    "leido": false,
+    "puntuacion": 7,
+    "autorId": 2,
+    "autor": {
+        "id": 2,
+        "nombre": "Gabriel García Márquez",
+        "bio": "Escritor colombiano, Premio Nobel de Literatura 1982"
+    }
+}
+
+===== 6. PATCH /api/libros/4 — parcial (200, R14) =====
+{
+    "id": 4,
+    "titulo": "Prueba de entrega",
+    "descripcion": "Creado desde la API",
+    "anioPublicacion": 2022,
+    "leido": true,
+    "puntuacion": 9,
+    "autorId": 2,
+    "autor": {
+        "id": 2,
+        "nombre": "Gabriel García Márquez",
+        "bio": "Escritor colombiano, Premio Nobel de Literatura 1982"
+    }
+}
+
+===== 7. POST con datos inválidos (400) =====
+status=400
+{
+    "error": "El título es obligatorio. El año de publicación debe ser un entero entre 0 y 2100"
+}
+
+===== 8. GET /api/libros/4 (200) =====
+status=200
+
+===== 9. DELETE /api/libros/4 (200, R15) =====
+{
+    "message": "Libro eliminado",
+    "id": 4
+}
+
+===== 10. GET del libro borrado (404) =====
+status=404
+
+===== 11. Petición desde origen no permitido por CORS (403) =====
+status=403
+
+===== 12. Comprobación de que el seed sigue intacto =====
+libros tras el ciclo CRUD: 3
+['La casa de los espíritus', 'Cien años de soledad', 'La región más transparente']
