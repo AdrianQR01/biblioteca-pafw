@@ -108,6 +108,7 @@ biblioteca/
 ├── .gitignore                   # Exclusiones globales de Git
 ├── .node-version                # Versión de Node.js fijada (20.18.0)
 ├── render.yaml                  # Blueprint de infraestructura como código (IaC)
+├── VERIFICACION-REQUISITOS.md   # Checklist R1–R19 con la evidencia de cada requisito
 └── README.md                    # Documentación del proyecto
 ```
 
