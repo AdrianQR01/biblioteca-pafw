@@ -248,5 +248,11 @@ cd backend && npm run setup
 
 ---
 
+## ✅ 9. Verificación de requisitos
+
+El cumplimiento de cada requisito del bloque (R1–R19), con su evidencia concreta y los comandos para reproducir la comprobación, está documentado en [`VERIFICACION-REQUISITOS.md`](./VERIFICACION-REQUISITOS.md).
+
+---
+
 ## 📜 Licencia
 Proyecto educativo desarrollado para el módulo PAFW del ciclo formativo de grado superior en Desarrollo de Aplicaciones Web (DAW).
